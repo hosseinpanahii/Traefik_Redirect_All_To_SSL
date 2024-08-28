@@ -24,7 +24,7 @@ services:
       - --entrypoints.websecure.address=:443
       - --entrypoints.websecure.asDefault=true
       - --entrypoints.websecure.http.tls.certresolver=myresolver
-      - --certificatesresolvers.myresolver.acme.email=rdppanahi@gmail.com
+      - --certificatesresolvers.myresolver.acme.email=x@gmail.com
       - --certificatesresolvers.myresolver.acme.tlschallenge=true
       - --certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json
     labels:
@@ -56,9 +56,7 @@ services:
       - traefik.http.routers.nginx.rule=Host(`mail.panmal.ir`)
       - traefik.http.routers.nginx.service=mynginx
       - traefik.http.services.mynginx.loadbalancer.server.port=80
-        #- traefik.http.routers.nginx.tls=true
-        #- "traefik.http.routers.nginx.entrypoints=websecure"
-        #- "traefik.http.routers.nginx.tls.certresolver=myresolver"
+    
 networks:
   traefik:
     external: true
